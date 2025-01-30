@@ -36,7 +36,7 @@ public class ClienteDAOImpl implements ClienteDAO {
     @Override
     public List<Cliente> getAll() {
 
-        List<Cliente> listFab = jdbcTemplate.query(
+        List<Cliente> listCli = jdbcTemplate.query(
                 "SELECT * FROM cliente",
                 (rs, rowNum) -> new Cliente(rs.getInt("id"),
                         rs.getString("nombre"),
@@ -47,9 +47,9 @@ public class ClienteDAOImpl implements ClienteDAO {
                 )
         );
 
-        log.info("Devueltos {} registros.", listFab.size());
+        log.info("Devueltos {} registros.", listCli.size());
 
-        return listFab;
+        return listCli;
     }
 
     /**

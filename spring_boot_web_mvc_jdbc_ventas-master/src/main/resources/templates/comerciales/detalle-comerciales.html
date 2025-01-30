@@ -70,5 +70,39 @@
 
 </div>
 
+<div id="contenedor" style="float:none; margin: 0 auto;width: 900px;">
+    <div class="clearfix">
+        <div style="float: left; width: 50%">
+            <h4 th:text="${pedido}"></h4>
+        </div>
+    </div>
+    <div class="clearfix">
+        <hr/>
+    </div>
+    <div class="clearfix">
+        <div style="float: left;width: 25%">Id</div>
+        <div style="float: left;width: 25%" th:text="Total"></div>
+        <div style="float: left;width: 25%" th:text="Fecha"></div>
+        <div style="float: left;width: 25%" th:text="Cliente"></div>
+    </div>
+    <div class="clearfix">
+        <hr/>
+    </div>
+
+    <div th:each="pedidoDTO : ${pedidosDTO}" style="margin-top: 6px;" class="clearfix">
+        <div style="float: left;width: 25%" th:text="${pedidoDTO.id}">0</div>
+        <div style="float: left;width: 25%" th:text="${pedidoDTO.total} + ' €'">total</div>
+        <div style="float: left;width: 25%" th:text="${pedidoDTO.fecha}">fecha</div>
+        <div style="float: left;width: 25%">
+            <a th:href="@{/clientes/__${pedidoDTO.id_cliente}__}"
+               th:text="${pedidoDTO.getNombre_cliente()}">
+            </a>
+        </div>
+    </div>
+
+    <h1>Total de pedidos: </h1>
+    
+</div>
+
 </body>
 </html>

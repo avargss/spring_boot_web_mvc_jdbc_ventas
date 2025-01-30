@@ -1,20 +1,21 @@
-package org.iesbelen.modelo;
+package org.iesbelen.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-import java.time.LocalDate;
 import java.util.Date;
 
 @Data
 @AllArgsConstructor
-public class Pedido {
+public class PedidoDTO {
 
     private int id;
     private double total;
     private Date fecha;
     private int id_cliente;
     private int id_comercial;
+
+    private String nombre_cliente;
 
     public int getId() {
         return id;
@@ -54,5 +55,13 @@ public class Pedido {
 
     public void setId_comercial(int id_comercial) {
         this.id_comercial = id_comercial;
+    }
+
+    public String getNombre_cliente() {
+        return nombre_cliente;
+    }
+
+    public void setNombre_cliente(String nombre_cliente) {
+        this.nombre_cliente = nombre_cliente;
     }
 }

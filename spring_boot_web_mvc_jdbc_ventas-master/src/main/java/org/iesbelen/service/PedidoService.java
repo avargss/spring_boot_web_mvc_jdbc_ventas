@@ -20,21 +20,15 @@ public class PedidoService {
 
     @Autowired
     private PedidoDAO pedidoDAO;
+
     @Autowired
     private ClienteDAO clienteDAO;
+
     @Autowired
     private PedidoMapper pedidoMapper;
 
-    public List<Pedido> listAll() {
-        return pedidoDAO.getAll();
-    }
-
-    public List<Pedido> listPedidos(int idComercial) {
-
-        List<Pedido> pedidos = pedidoDAO.getComercialById(idComercial);
-        pedidos.sort((a, b) -> b.getFecha().compareTo(a.getFecha()));
-
-        return pedidos;
+    public int contarTodosLosPedidos() {
+        return pedidoDAO.countPedidos();
     }
 
     public List<PedidoDTO> listPedidosDTO(int idComercial) {
@@ -56,5 +50,17 @@ public class PedidoService {
         }
         System.out.println("Pasa por aquí" + pedidosDTO);
         return pedidosDTO;
+    }
+
+    public double mediaPedidos(int total, int particular) {
+
+        double media;
+
+        System.out.println(particular);
+
+        media = (double) total / particular;
+        media = media * 100;
+        return media;
+
     }
 }

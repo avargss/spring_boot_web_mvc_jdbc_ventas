@@ -100,8 +100,11 @@
         </div>
     </div>
 
-    <h1>Total de pedidos: </h1>
-    
+    <div class="container">
+        <h1>Total de pedidos: <span class="fw-bold text-success"><th:block th:text="${totalPedidos}"/></span></h1>
+        <h2>Media de pedidos del comercial: <span class="fw-bold text-success"><th:block th:text="${media}"/></span></h2>
+    </div>
+
 </div>
 
 </body>

@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface PedidoDAO {
 
-    public List<Pedido> getAll();
+    public int countPedidos();
 
     public List<Pedido> getComercialById(int id);
 }

@@ -44,9 +44,14 @@ public class ComercialController {
 
         Comercial comercial = comercialService.one(id);
         List<PedidoDTO> pedidoDTO = pedidoService.listPedidosDTO(id);
+        int total = pedidoService.contarTodosLosPedidos();
+        double media = pedidoService.mediaPedidos(total, pedidoDTO.size());
 
         model.addAttribute("comercial", comercial);
         model.addAttribute("pedidosDTO", pedidoDTO);
+        model.addAttribute("totalPedidos", total);
+        model.addAttribute("media", media);
+
 
         return "comerciales/detalle-comerciales";
     }

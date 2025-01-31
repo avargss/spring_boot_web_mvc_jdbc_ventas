@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Detalle Cliente</title>
+    <title th:text="#{clientes.detalle.titulo}">Detalles del Cliente</title>
     <style>
         .clearfix::after {
             content: "";
@@ -17,14 +17,13 @@
 <div id="contenedora" style="float:none; margin: 0 auto;width: 900px;">
     <div class="clearfix">
         <div style="float: left; width: 50%">
-            <h1>Detalle Cliente</h1>
+            <h1 th:text="#{clientes.detalle.titulo}">Detalles del Cliente</h1>
         </div>
         <div style="float: none;width: auto;overflow: hidden;min-height: 80px;position: relative;">
 
             <div style="position: absolute; left: 39%; top : 39%;">
-
                 <form action="/clientes">
-                    <input type="submit" value="Volver"/>
+                    <button th:text="#{clientes.accion.cancelar}" value="Cancelar"/>
                 </form>
             </div>
 
@@ -37,7 +36,7 @@
 
     <div style="margin-top: 6px;" class="clearfix">
         <div style="float: left;width: 50%">
-            <label>Nombre</label>
+            <label th:text="#{clientes.form.nombre}">Nombre</label>
         </div>
         <div style="float: none;width: auto;overflow: hidden;">
             <input th:value="${cliente.nombre}" value="Código" readonly="readonly"/>
@@ -45,7 +44,7 @@
     </div>
     <div style="margin-top: 6px;" class="clearfix">
         <div style="float: left;width: 50%">
-            <label>Apellido 1</label>
+            <label th:text="#{clientes.form.apellido1}">Apellido 1</label>
         </div>
         <div style="float: none;width: auto;overflow: hidden;">
             <input th:value="${cliente.apellido1}" value="Código" readonly="readonly"/>
@@ -53,7 +52,7 @@
     </div>
     <div style="margin-top: 6px;" class="clearfix">
         <div style="float: left;width: 50%">
-            <label>Apellido 2</label>
+            <label th:text="#{clientes.form.apellido2}">Apellido 2</label>
         </div>
         <div style="float: none;width: auto;overflow: hidden;">
             <input th:value="${cliente.apellido2}" value="Código" readonly="readonly"/>
@@ -61,7 +60,7 @@
     </div>
     <div style="margin-top: 6px;" class="clearfix">
         <div style="float: left;width: 50%">
-            <label>Ciudad</label>
+            <label th:text="#{clientes.form.ciudad}">Ciudad</label>
         </div>
         <div style="float: none;width: auto;overflow: hidden;">
             <input th:value="${cliente.ciudad}" value="Código" readonly="readonly"/>
@@ -69,7 +68,7 @@
     </div>
     <div style="margin-top: 6px;" class="clearfix">
         <div style="float: left;width: 50%">
-            <label>Categoria</label>
+            <label th:text="#{clientes.form.categoria}">Categoria</label>
         </div>
         <div style="float: none;width: auto;overflow: hidden;">
             <input th:value="${cliente.categoria}" value="Código" readonly="readonly"/>

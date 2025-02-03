@@ -26,7 +26,7 @@
                     <button type="submit" th:text="#{clientes.accion.guardar}">Guardar</button>
                 </div>
                 <div style="position: absolute; left: 40%; top : 39%;">
-                    <button th:href="@{/clientes}" th:text="#{clientes.accion.cancelar}">Cancelar</button>
+                    <a th:href="@{/clientes}" th:text="#{clientes.accion.cancelar}">Cancelar</a>
                 </div>
 
             </div>
@@ -42,6 +42,9 @@
             </div>
             <div style="float: none;width: auto;overflow: hidden;">
                 <input th:field="*{nombre}" type="text"/>
+                <ul th:if="${#fields.hasErrors('nombre')}">
+                    <li th:each="err : ${#fields.errors('nombre')}" th:text="${err}" class="error"/>
+                </ul>
             </div>
         </div>
 
@@ -51,6 +54,9 @@
             </div>
             <div style="float: none;width: auto;overflow: hidden;">
                 <input th:field="*{apellido1}" type="text"/>
+                <ul th:if="${#fields.hasErrors('apellido1')}">
+                    <li th:each="err : ${#fields.errors('apellido1')}" th:text="${err}" class="error"/>
+                </ul>
             </div>
         </div>
 
@@ -69,6 +75,9 @@
             </div>
             <div style="float: none;width: auto;overflow: hidden;">
                 <input th:field="*{ciudad}" type="text"/>
+                <ul th:if="${#fields.hasErrors('ciudad')}">
+                    <li th:each="err : ${#fields.errors('ciudad')}" th:text="${err}" class="error"/>
+                </ul>
             </div>
         </div>
 
@@ -78,9 +87,11 @@
             </div>
             <div style="float: none;width: auto;overflow: hidden;">
                 <input th:field="*{categoria}" type="text"/>
+                <ul th:if="${#fields.hasErrors('categoria')}">
+                    <li th:each="err : ${#fields.errors('categoria')}" th:text="${err}" class="error"/>
+                </ul>
             </div>
         </div>
-
     </form>
 </div>
 

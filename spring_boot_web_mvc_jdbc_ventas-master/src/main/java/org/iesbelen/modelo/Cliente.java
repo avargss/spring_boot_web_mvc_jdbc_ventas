@@ -1,7 +1,6 @@
 package org.iesbelen.modelo;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
@@ -21,24 +20,24 @@ public class Cliente {
 
     private long id;
 
-    @NotBlank(message = "Por favor, introduzca nombre.")
-    @Size(max=30, message = "Nombre como máximo de 30 caracteres.")
+    @NotBlank(message = "{error.nombre}")
+    @Size(max =30, message = "{error.nombre.size.max}")
     private String nombre;
 
-    @NotBlank(message = "Por favor, introduzca su primer apellido.")
-    @Size(max=30, message = "Nombre como máximo de 30 caracteres.")
+    @NotBlank(message = "{error.apellido}")
+    @Size(max =30, message = "{error.apellido.size.max}")
     private String apellido1;
     private String apellido2;
 
-    @NotBlank(message = "Por favor, introduzca su ciudad.")
-    @Size(min = 100, max=1000, message = "${cliente.error}")
+    @NotBlank(message = "{error.ciudad}")
+    @Size(max =50, message = "{error.ciudad.size.max}")
     private String ciudad;
 
-    @NotBlank
+    @Min(value = 100, message = "{error.min.categoria}")
+    @Max(value = 1000, message = "{error.max.categoria}")
     private int categoria;
 
     public Cliente() {
 
     }
-
 }

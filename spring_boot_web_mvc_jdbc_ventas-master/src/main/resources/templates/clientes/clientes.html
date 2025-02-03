@@ -18,7 +18,14 @@
             <h1 th:text="#{clientes.titulo}">Clientes</h1>
         </div>
         <div style="float: none;width: auto;overflow: hidden;min-height: 80px;position: relative;">
-            <div style="position: absolute; left: 39%; top: 39%;">
+
+            <div style="position: absolute; left: 20%; top : 40%;">
+                <form action="/comerciales" style="display: inline;">
+                    <input type="submit" th:value="#{comerciales.titulo}"/>
+                </form>
+            </div>
+
+            <div style="position: absolute; left: 40%; top: 40%;">
                 <form action="/clientes/crear">
                     <input type="submit" th:value="#{clientes.accion.nuevo}" value="Crear">
                 </form>
